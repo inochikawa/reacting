@@ -1,0 +1,36 @@
+$back-color: white;
+
+@font-face {
+	font-family: "Lora";
+	font-style: normal;
+	font-weight: 400;
+	src: url("./fonts/lora/Lora-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Lora-italic";
+	font-style: italic;
+	font-weight: 400;
+	src: url("./fonts/lora/Lora-Italic.ttf");
+}
+
+@font-face {
+	font-family: "Lora-bold";
+	font-style: normal;
+	font-weight: 600;
+	src: url("./fonts/lora/Lora-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Lora-bold-italic";
+	font-style: italic;
+	font-weight: 600;
+	src: url("./fonts/lora/Lora-BoldItalic.ttf");
+}
+
+body{
+    font-family: 'Lora', 'serif';    
+    background-color: $back-color;
+    padding: 0;
+    margin: 0;
+}

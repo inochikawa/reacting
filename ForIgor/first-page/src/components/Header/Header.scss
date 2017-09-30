@@ -1,0 +1,84 @@
+@import "./../../share.scss";
+
+$back-color: rgba(0,0,0,0);
+$back-color-active: #36373a;
+$button-color: #3a9e9a;
+$border-padding: 6px;
+$border-radius: 40px;  
+
+.flex-basic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    @extend .flex-basic;
+    background-color: $back-color;
+    z-index: 99999;
+    position: fixed;
+    padding: 10px 15px;
+    height: 50px;
+    right: 0;
+    left: 0;
+    top: 0;
+    transition: all 500ms;
+
+    img {
+        width: 105px;
+        height: auto;
+        margin: 5px 3px;
+
+        @media (max-width: $screen500) {
+            width: 20px;
+        }
+
+        // @media (max-width: $screen425) {
+        //     width: 30px;
+        // }
+
+        // @media (max-width: $screen320) {
+        //     width: 20px;
+        // }
+    }
+
+    .main-info{
+        @extend .flex-basic;
+        color: white;
+        font-size: 11px;
+
+        .phone-section{
+            border-right: 1px solid white;
+            padding: $border-padding;
+            
+            @media (max-width: $screen425) {
+                font-size: 9px;
+            }
+
+            .phone-icon {
+                font: {
+                    size: 20px;
+                }
+                @media (max-width: $screen425) {
+                    display: none;
+                }
+            }
+        }   
+        
+        .order-request-section {
+            margin-left: 10px;   
+            font-size: 11px;
+            .button {
+                font-size: 11px;
+                height: auto;
+                @media (max-width: $screen425) {
+                    font-size: 10px;
+                }
+            }         
+        }
+    }
+}
+
+
+

@@ -1,0 +1,45 @@
+@mixin blink-animation-with-color-first($color, $backColor) {
+    animation: blink-first;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-duration: 3s;
+
+    @keyframes blink-first {
+        0% {
+            background-color: $backColor;
+        }
+        69% {
+            background-color: $backColor;
+        }
+        70% {
+            background-color: $color;
+        }
+        100% {
+            background-color: $backColor;
+        }
+    }
+}
+
+@mixin blink-animation-with-color-second($color, $backColor) {
+    animation: blink-second;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-duration: 3s;
+
+    @keyframes blink-second {
+        0% {
+            background-color: $backColor;
+        }
+        69% {
+            background-color: $backColor;
+        }
+        70% {
+            background-color: $color;
+        }
+        100% {
+            background-color: $backColor;
+        }
+    }
+}

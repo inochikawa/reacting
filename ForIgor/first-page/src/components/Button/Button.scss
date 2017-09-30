@@ -1,0 +1,45 @@
+@import "./../../share-animations.scss";
+
+$button-color: #3a9e9a;
+$border-padding: 8px;
+$border-radius: 40px;  
+
+.button {
+    background-color: rgba(0,0,0,0);
+    border: 1px solid $button-color;
+    color: white;
+    padding: $border-padding;
+    border-radius: $border-radius;
+    outline-style: none;
+    cursor: pointer;
+    transition: all 250ms;
+    width: 100%;
+    height: 50px;
+}
+
+.first-back-color{
+    background-color: #3a9e9a;
+    border: 1px solid #3a9e9a;
+    &:hover {
+        background-color: lighten(#3a9e9a, 10);
+        animation: none;
+    }
+}
+
+.second-back-color{
+    background-color: #8478FF;
+    border: 1px solid #8478ff;
+    &:hover {
+        background-color: lighten(#8478FF, 10);
+        animation: none;
+    }
+}
+
+
+.button-animate-blink-first {
+    @include blink-animation-with-color-first(lighten(#3a9e9a, 10), #3a9e9a);
+}
+
+.button-animate-blink-second {
+    @include blink-animation-with-color-second(lighten(#8478FF, 10), #8478FF);
+}

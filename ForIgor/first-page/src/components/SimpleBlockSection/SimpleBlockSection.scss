@@ -1,0 +1,32 @@
+.flex-basic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.grey {
+    background-color: #F3F3F3;
+}
+
+.simpleBlockSection {
+    margin: 0;
+    padding: 20px 10%;
+
+    @media (max-width: screen768){
+        padding: 20px 10px;
+    }
+
+    .section-header{
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .block-items {
+        @extend .flex-basic;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+}

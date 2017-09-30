@@ -1,0 +1,280 @@
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/Lora-Regular.ttf); }
+
+@font-face {
+  font-family: "Lora-italic";
+  font-style: italic;
+  font-weight: 400;
+  src: url(./fonts/Lora-Italic.ttf); }
+
+@font-face {
+  font-family: "Lora-bold";
+  font-style: normal;
+  font-weight: 600;
+  src: url(./fonts/Lora-Bold.ttf); }
+
+@font-face {
+  font-family: "Lora-bold-italic";
+  font-style: italic;
+  font-weight: 600;
+  src: url(./fonts/Lora-BoldItalic.ttf); }
+
+body {
+  font-family: 'Lora', 'serif';
+  background-color: white;
+  padding: 0;
+  margin: 0; }
+.flex-basic, .header, .header .main-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.header {
+  background-color: transparent;
+  z-index: 99999;
+  position: fixed;
+  padding: 10px 15px;
+  height: 50px;
+  right: 0;
+  left: 0;
+  top: 0;
+  transition: all 500ms; }
+  .header img {
+    width: 105px;
+    height: auto;
+    margin: 5px 3px; }
+    @media (max-width: 500px) {
+      .header img {
+        width: 20px; } }
+  .header .main-info {
+    color: white;
+    font-size: 11px; }
+    .header .main-info .phone-section {
+      border-right: 1px solid white;
+      padding: 6px; }
+      @media (max-width: 425px) {
+        .header .main-info .phone-section {
+          font-size: 9px; } }
+      .header .main-info .phone-section .phone-icon {
+        font-size: 20px; }
+        @media (max-width: 425px) {
+          .header .main-info .phone-section .phone-icon {
+            display: none; } }
+    .header .main-info .order-request-section {
+      margin-left: 10px;
+      font-size: 11px; }
+      .header .main-info .order-request-section .button {
+        font-size: 11px;
+        height: auto; }
+        @media (max-width: 425px) {
+          .header .main-info .order-request-section .button {
+            font-size: 10px; } }
+.button {
+  background-color: transparent;
+  border: 1px solid #3a9e9a;
+  color: white;
+  padding: 8px;
+  border-radius: 40px;
+  outline-style: none;
+  cursor: pointer;
+  transition: all 250ms;
+  width: 100%;
+  height: 50px; }
+
+.first-back-color {
+  background-color: #3a9e9a;
+  border: 1px solid #3a9e9a; }
+  .first-back-color:hover {
+    background-color: #4dbeb9;
+    animation: none; }
+
+.second-back-color {
+  background-color: #8478FF;
+  border: 1px solid #8478ff; }
+  .second-back-color:hover {
+    background-color: #b2abff;
+    animation: none; }
+
+.button-animate-blink-first {
+  animation: blink-first;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-duration: 3s; }
+
+@keyframes blink-first {
+  0% {
+    background-color: #3a9e9a; }
+  69% {
+    background-color: #3a9e9a; }
+  70% {
+    background-color: #4dbeb9; }
+  100% {
+    background-color: #3a9e9a; } }
+
+.button-animate-blink-second {
+  animation: blink-second;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-duration: 3s; }
+
+@keyframes blink-second {
+  0% {
+    background-color: #8478FF; }
+  69% {
+    background-color: #8478FF; }
+  70% {
+    background-color: #b2abff; }
+  100% {
+    background-color: #8478FF; } }
+.banner {
+  background-image: url(./images/back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative; }
+  .banner .shading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1; }
+  .banner div {
+    z-index: 10;
+    position: relative; }
+  .banner .banner-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; }
+    .banner .banner-center .banner-content {
+      top: -20px;
+      color: white;
+      margin: 10px auto;
+      max-width: 600px;
+      font-family: 'Lora'; }
+      @media (max-width: 500px) {
+        .banner .banner-center .banner-content {
+          top: 0px; } }
+      .banner .banner-center .banner-content .banner-text {
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        line-height: 50px; }
+        @media (max-width: 1366px) {
+          .banner .banner-center .banner-content .banner-text {
+            font-size: 30px;
+            line-height: 40px; } }
+        @media (max-width: 768px) {
+          .banner .banner-center .banner-content .banner-text {
+            font-size: 24px;
+            line-height: 30px; } }
+        @media (max-width: 500px) {
+          .banner .banner-center .banner-content .banner-text {
+            font-size: 18px;
+            line-height: 24px; } }
+      .banner .banner-center .banner-content .timer-content {
+        margin-top: 70px;
+        text-align: center; }
+        .banner .banner-center .banner-content .timer-content .timer-text {
+          margin: 0;
+          font-size: 12px; }
+        .banner .banner-center .banner-content .timer-content .timer-item {
+          font-size: 38px; }
+      .banner .banner-center .banner-content .subscribe-content {
+        width: 50%;
+        position: relative;
+        margin: 20px auto; }
+        .banner .banner-center .banner-content .subscribe-content .input-item {
+          width: 100%;
+          margin-bottom: 20px; }
+          @media (max-width: 500px) {
+            .banner .banner-center .banner-content .subscribe-content .input-item {
+              margin-bottom: 7px; } }
+          .banner .banner-center .banner-content .subscribe-content .input-item .inputField {
+            height: 50px;
+            border-radius: 40px;
+            text-align: center;
+            font-size: 18px; }
+            @media (max-width: 768px) {
+              .banner .banner-center .banner-content .subscribe-content .input-item .inputField {
+                height: 40px;
+                font-size: 16px; } }
+            @media (max-width: 500px) {
+              .banner .banner-center .banner-content .subscribe-content .input-item .inputField {
+                height: 30px;
+                font-size: 14px; } }
+            @media (max-width: 320px) {
+              .banner .banner-center .banner-content .subscribe-content .input-item .inputField {
+                height: 20px;
+                font-size: 12px; } }
+        .banner .banner-center .banner-content .subscribe-content .button-item {
+          text-align: center; }
+          .banner .banner-center .banner-content .subscribe-content .button-item .button {
+            font-size: 18px;
+            text-align: center; }
+            @media (max-width: 768px) {
+              .banner .banner-center .banner-content .subscribe-content .button-item .button {
+                height: 40px;
+                font-size: 16px; } }
+            @media (max-width: 500px) {
+              .banner .banner-center .banner-content .subscribe-content .button-item .button {
+                height: 30px;
+                font-size: 14px;
+                line-height: 0; } }
+            @media (max-width: 320px) {
+              .banner .banner-center .banner-content .subscribe-content .button-item .button {
+                height: 20px;
+                font-size: 12px; } }
+          .banner .banner-center .banner-content .subscribe-content .button-item span {
+            font-size: 24px; }
+.timer {
+  margin: 0;
+  padding: 0; }
+.inputField {
+  outline-style: none;
+  background-color: #F2EAE1;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #5C6B74;
+  color: #A5988A;
+  width: 100%;
+  box-sizing: border-box; }
+.flex-basic, .simpleBlockSection .block-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.grey {
+  background-color: #F3F3F3; }
+
+.simpleBlockSection {
+  margin: 0;
+  padding: 20px 15px; }
+  .simpleBlockSection .section-header {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 0; }
+  .simpleBlockSection .block-items {
+    justify-content: space-around;
+    align-items: flex-start; }
+.blockItem .number-holder .number {
+  border: 3px solid #48C3D4;
+  border-radius: 50%;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px; }
+
+.blockItem .block-header {
+  font-weight: bold; }
