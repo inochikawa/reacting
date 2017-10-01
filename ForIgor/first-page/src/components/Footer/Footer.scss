@@ -1,3 +1,46 @@
-.footer {
+$footer-color: #6F6F6F;
 
+.footer {
+    margin: 0;
+    padding: 25px 0;
+    color: $footer-color;
+    text-align: center;
+    p {
+        margin: 0;
+    }
+
+    .footer-info {
+        margin: 10px 0;
+    }
+
+    .footer-header {
+        text-transform: uppercase;
+        margin: 40px 0;
+        font-size: 26px;
+        font-weight: 200;
+        color: #7b8bb5;
+    }
+
+    .footer-mail {
+        margin: 10px auto;
+        a {
+            text-decoration: none;
+            color: $footer-color;
+        }
+    }
+
+    .footer-icon {
+        margin: 40px 0;
+        color: $footer-color;
+        font-size: 26px;
+
+        a {
+            color: $footer-color;
+            text-decoration: none;
+        }
+    }
+}
+
+.grey {
+    background-color: #fcfcfc;
 }

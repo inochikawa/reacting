@@ -1,12 +1,12 @@
 import React from "react";
-import "./TariffItem.scss";
+import "./BlockItem.scss";
 
-export class TariffItem extends React.Component {
+export class BlockItem extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			initWidth: `${Math.floor(800/props.totalCount)}px`,
-			width: `${Math.floor(800/props.totalCount)}px`
+			initWidth: `${Math.floor(800 / props.totalCount)}px`,
+			width: `${Math.floor(800 / props.totalCount)}px`
 		}
 	}
 
@@ -31,17 +31,19 @@ export class TariffItem extends React.Component {
 	}
 
 	render() {
+		let liIndex = 0;
 		return (
 			<div
-				className="tariffItem"
+				className="advansedBlockItem"
 				style={{
 					width: `${this.state.width}`
 				}}>
-				<div className="img-holder">
-					<img src={this.props.img}/>
-				</div>
 				<p className="block-header">{this.props.header}</p>
-				<p className="block-text">{this.props.children}</p>
+				<ul className="block-list">
+					{this.props.list.map(listItem => {
+						return <li key={liIndex++}>{listItem}</li>
+					})}
+				</ul>
 			</div>
 		)
 	}

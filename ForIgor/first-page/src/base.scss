@@ -1,35 +1,65 @@
 $back-color: white;
 
 @font-face {
-	font-family: "Lora";
+	font-family: "open-sans";
 	font-style: normal;
 	font-weight: 400;
-	src: url("./fonts/lora/Lora-Regular.ttf");
+	src: url("./fonts/open-sans/OpenSans-Regular.ttf");
 }
 
 @font-face {
-	font-family: "Lora-italic";
+	font-family: "open-sans-italic";
 	font-style: italic;
 	font-weight: 400;
-	src: url("./fonts/lora/Lora-Italic.ttf");
+	src: url("./fonts/open-sans/OpenSans-Italic.ttf");
 }
 
 @font-face {
-	font-family: "Lora-bold";
+	font-family: "open-sans-bold";
 	font-style: normal;
 	font-weight: 600;
-	src: url("./fonts/lora/Lora-Bold.ttf");
+	src: url("./fonts/open-sans/OpenSans-Bold.ttf");
 }
 
 @font-face {
-	font-family: "Lora-bold-italic";
+	font-family: "open-sans-bold-italic";
 	font-style: italic;
 	font-weight: 600;
-	src: url("./fonts/lora/Lora-BoldItalic.ttf");
+	src: url("./fonts/open-sans/OpenSans-BoldItalic.ttf");
 }
+
+
+@font-face {
+	font-family: "open-sans-light";
+	font-style: normal;
+	font-weight: 300;
+	src: url("./fonts/open-sans/OpenSans-Light.ttf");
+}
+
+@font-face {
+	font-family: "open-sans-light-italic";
+	font-style: italic;
+	font-weight: 300;
+	src: url("./fonts/open-sans/OpenSans-LightItalic.ttf");
+}
+
+@font-face {
+	font-family: "open-sans-semi-bold";
+	font-style: normal;
+	font-weight: 300;
+	src: url("./fonts/open-sans/OpenSans-SemiBold.ttf");
+}
+
+@font-face {
+	font-family: "open-sans-semi-bold-italic";
+	font-style: italic;
+	font-weight: 300;
+	src: url("./fonts/open-sans/OpenSans-SemiBoldItalic.ttf");
+}
+
 
 body{
-    font-family: 'Lora', 'serif';    
+    font-family: 'open-sans', 'serif';    
     background-color: $back-color;
     padding: 0;
     margin: 0;

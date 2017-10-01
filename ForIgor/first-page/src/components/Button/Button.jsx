@@ -25,8 +25,16 @@ export class Button extends React.Component {
 			}
 		}
 
+		let onClickHandler = null;
+
+		switch(this.props.type){
+			case 1: onClickHandler = this.props.onClick; break; // записатся
+			case 2: onClickHandler = this.props.onSendRequest; break; // забронировать место
+			case 3: onClickHandler = this.props.onScrollDown; break; // опустить экран вниз
+		}
+
 		return (
-			<button onClick={this.props.onClick} className={classes.join(" ")}>{this.props.children}</button>
+			<button onClick={onClickHandler} className={classes.join(" ")}>{this.props.children}</button>
 		)
 	}
 }

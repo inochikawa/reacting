@@ -1,13 +1,21 @@
-import  React from "react";
+import React from "react";
 import { render } from 'react-dom';
 import "./base.scss";
 
 import { Header } from "./components/Header/Header.jsx";
 import { Banner } from "./components/Banner/Banner.jsx";
 import { SimpleBlockSection } from "./components/SimpleBlockSection/SimpleBlockSection.jsx";
+import { AdvansedBlockSection } from "./components/AdvansedBlockSection/AdvansedBlockSection.jsx";
+import { Tariffs } from "./components/Tariffs/Tariffs.jsx";
+import { ReserveRequest } from "./components/ReserveRequest/ReserveRequest.jsx";
+import { Footer } from "./components/Footer/Footer.jsx";
+
+import tariffImg1 from "./components/Tariffs/images/tariff1.png";
+import tariffImg2 from "./components/Tariffs/images/tariff2.png";
+import tariffImg3 from "./components/Tariffs/images/tariff3.png";
 
 class Index extends React.Component {
-    render(){
+    render() {
 
         let blocksInfo1 = [
             {
@@ -50,12 +58,70 @@ class Index extends React.Component {
             }
         ]
 
-        return(
+        let directionsBlocksInfo = [
+            {
+                number: 1,
+                header: "Маркетинг",
+                list: [
+                    "SMM",
+                    "Content Marketing",
+                    "PR",
+                    "SEO"
+                ]
+            },
+            {
+                number: 2,
+                header: "IT - Разработка",
+                list: [
+                    "Developing",
+                    "Design",
+                    "QA",
+                    "Project Manager"
+                ]
+            },
+            {
+                number: 3,
+                header: "Продажи",
+                list: [
+                    "Sales",
+                    "Account",
+                    "Business Development",
+                    "Finance"
+                ]
+            }
+        ]
+
+        let tariffsBlocksInfo = [
+            {
+                number: 1,
+                img: tariffImg1,
+                header: "Плата за результат",
+                text: "Мы не имеем тарифных планов и пакетов услуг."
+            },
+            {
+                number: 2,
+                img: tariffImg2,
+                header: "Без тарифов",
+                text: "Мы не имеем тарифных планов и пакетов услуг."
+            },
+            {
+                number: 3,
+                img: tariffImg3,
+                header: "Закрытая вакансия",
+                text: "Вы нам платите за закрытую вакансию."
+            }
+        ]
+
+        return (
             <div>
-                <Header/>
-                <Banner/>
-                <SimpleBlockSection blockInfo={blocksInfo1} sectionHeader="Преимущества" type="grey"/>
-                <SimpleBlockSection blockInfo={blocksInfo2} sectionHeader="Как это работает"  type="white"/>
+                <Header />
+                <Banner />
+                <SimpleBlockSection blockInfo={blocksInfo1} sectionHeader="Преимущества" type="white" />
+                <SimpleBlockSection blockInfo={blocksInfo2} sectionHeader="Как это работает" type="grey" />
+                <AdvansedBlockSection blockInfo={directionsBlocksInfo} sectionHeader="Направления" type="white" />
+                <Tariffs blockInfo={tariffsBlocksInfo} sectionHeader="Таррифы" type="grey" />
+                <ReserveRequest type="white"/>
+                <Footer type="grey"/>
             </div>
         )
     }

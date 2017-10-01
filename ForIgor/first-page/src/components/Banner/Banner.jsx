@@ -34,7 +34,8 @@ export class Banner extends React.Component {
 					})
 				} else {
 					this.setState({
-						isSubscribed: true
+						isSubscribed: true,
+						showBtn: false
 					})
 				}
 			})
@@ -50,7 +51,12 @@ export class Banner extends React.Component {
 		let item = null;
 
 		if (this.state.showBtn) {
-			item = <Button onClick={this.sendEmail.bind(this)} showAnimation={true} className="subscribe-btn" buttonNumber={2}>Подписаться</Button>
+			item = <Button
+				onClick={this.sendEmail.bind(this)}
+				showAnimation={true}
+				className="subscribe-btn"
+				buttonNumber={2}
+				type={1}>Подписаться</Button>
 		} else if (this.state.isSubscribed) {
 			item = <span>Спасибо, Вы уже подписаны!</span>
 		} else {
