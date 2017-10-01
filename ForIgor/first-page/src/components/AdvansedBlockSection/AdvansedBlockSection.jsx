@@ -14,7 +14,10 @@ export class AdvansedBlockSection extends React.Component {
 					number={info[i].number}
 					header={info[i].header}
 					totalCount={info.length}
-					list={info[i].list}>
+					list={info[i].list}
+					showImgSection={this.props.showImgSection}
+					img={info[i].img}
+					>
 					{info[i].text}
 				</BlockItem>
 			);

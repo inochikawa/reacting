@@ -49,7 +49,7 @@ export class Header extends React.Component {
 
 	scrollDown() {
 		let target = document.getElementById("request-section");
-		this.animate(document.scrollingElement || document.documentElement, "scrollTop", "", window.scrollY, target.offsetTop, 2000, true)
+		this.animate(document.scrollingElement || document.documentElement, "scrollTop", "", window.scrollY, target.offsetTop, 500, true)
 	}
 
 	animate(elem, style, unit, from, to, time, prop) {

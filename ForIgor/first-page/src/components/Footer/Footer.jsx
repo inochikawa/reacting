@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.scss";
+import logo from "./images/logo_black_text.png";
 
 import FaFacebook from "react-icons/lib/fa/facebook";
 
@@ -23,7 +24,9 @@ export class Footer extends React.Component {
 				<p className="footer-info"> +380 97 461 58 57</p>
 				<p className="footer-info">Киев, Украина</p>
 				<div className="footer-icon">
-					<a href="https://www.facebook.com/studego/" target="_blank"><FaFacebook/></a>
+					<a href="#" target="_blank">
+						<img src={logo}/>
+					</a>
 				</div>
 			</div>
 		)

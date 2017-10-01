@@ -37,6 +37,10 @@
             max-width: 600px;
             font-family: 'open-sans'; 
 
+            @media (min-width: $screen1920) {
+                max-width: 1600px;
+            }
+
             @media (max-width: $screen500) {                        
                 top: 0px;
             }
@@ -46,6 +50,11 @@
                 text-align: center;
                 font-size: 40px;
                 line-height: 50px;
+
+                @media (min-width: $screen1920) {
+                    font-size: 70px;
+                    line-height: 90px;
+                }
 
                 @media (max-width: $screen1366) {                        
                     font-size: 30px;
@@ -67,11 +76,17 @@
                 margin-top: 70px;
                 text-align: center;
                 .timer-text {
+                    @media (min-width: $screen1920) {
+                        font-size: 27px;
+                    }
                     margin: 0;
                     font-size: 12px;
                 }
     
                 .timer-item{
+                    @media (min-width: $screen1920) {
+                        font-size: 72px;
+                    }
                     font-size: 38px;
                 }
             }
@@ -80,6 +95,10 @@
                 width: 50%;
                 position: relative;
                 margin: 20px auto;
+
+                @media (min-width: $screen1920) {
+                    width: 25%;
+                }
     
                 .input-item {
                     width: 100%;

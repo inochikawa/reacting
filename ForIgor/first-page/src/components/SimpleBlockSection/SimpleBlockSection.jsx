@@ -13,7 +13,8 @@ export class SimpleBlockSection extends React.Component {
 					key={info[i].number}
 					number={info[i].number}
 					header={info[i].header}
-					totalCount={info.length}>
+					totalCount={info.length}
+					showNumbers={this.props.showNumbers}>
 					{info[i].text}
 				</BlockItem>
 			);
@@ -22,17 +23,23 @@ export class SimpleBlockSection extends React.Component {
 		let classes = [];
 		classes.push("simpleBlockSection");
 
-		if(this.props.type == "grey"){
+		if (this.props.type == "grey") {
 			classes.push("grey")
 		}
 
-		if(this.props.type == "white"){
+		if (this.props.type == "white") {
 			classes.push("white")
+		}
+
+		let header = null;
+
+		if (this.props.showHeader) {
+			header = <p className="section-header">{this.props.sectionHeader}</p>;
 		}
 
 		return (
 			<div className={classes.join(" ")}>
-				<p className="section-header">{this.props.sectionHeader}</p>
+				{header}
 				<div className="block-items">
 					{blocks}
 				</div>

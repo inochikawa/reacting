@@ -5,8 +5,8 @@ export class BlockItem extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			initWidth: `${Math.floor(800/props.totalCount)}px`,
-			width: `${Math.floor(800/props.totalCount)}px`
+			initWidth: `${Math.floor(window.innerWidth * 0.7 / props.totalCount)}px`,
+			width: `${Math.floor(window.innerWidth * 0.7 / props.totalCount)}px`
 		}
 	}
 
@@ -31,17 +31,23 @@ export class BlockItem extends React.Component {
 	}
 
 	render() {
+
+		let numberSection = null;
+
+		if (this.props.showNumbers) {
+			numberSection = <div className="number-holder">
+				<div className="number">
+					{this.props.number}
+				</div>
+			</div>
+		}
 		return (
 			<div
 				className="blockItem"
 				style={{
 					width: `${this.state.width}`
 				}}>
-				<div className="number-holder">
-					<div className="number">
-						{this.props.number}
-					</div>
-				</div>
+				{numberSection}
 				<p className="block-header">{this.props.header}</p>
 				<p className="block-text">{this.props.children}</p>
 			</div>

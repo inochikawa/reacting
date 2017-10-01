@@ -14,6 +14,10 @@ import tariffImg1 from "./components/Tariffs/images/tariff1.png";
 import tariffImg2 from "./components/Tariffs/images/tariff2.png";
 import tariffImg3 from "./components/Tariffs/images/tariff3.png";
 
+import directionImg1 from "./components/AdvansedBlockSection/images/directionImg1.png";
+import directionImg2 from "./components/AdvansedBlockSection/images/directionImg2.png";
+import directionImg3 from "./components/AdvansedBlockSection/images/directionImg3.png";
+
 class Index extends React.Component {
     render() {
 
@@ -67,7 +71,8 @@ class Index extends React.Component {
                     "Content Marketing",
                     "PR",
                     "SEO"
-                ]
+                ],
+                img: directionImg1
             },
             {
                 number: 2,
@@ -77,7 +82,8 @@ class Index extends React.Component {
                     "Design",
                     "QA",
                     "Project Manager"
-                ]
+                ],
+                img: directionImg2
             },
             {
                 number: 3,
@@ -87,7 +93,8 @@ class Index extends React.Component {
                     "Account",
                     "Business Development",
                     "Finance"
-                ]
+                ],
+                img: directionImg3
             }
         ]
 
@@ -116,10 +123,10 @@ class Index extends React.Component {
             <div>
                 <Header />
                 <Banner />
-                <SimpleBlockSection blockInfo={blocksInfo1} sectionHeader="Преимущества" type="white" />
-                <SimpleBlockSection blockInfo={blocksInfo2} sectionHeader="Как это работает" type="grey" />
-                <AdvansedBlockSection blockInfo={directionsBlocksInfo} sectionHeader="Направления" type="white" />
-                <Tariffs blockInfo={tariffsBlocksInfo} sectionHeader="Таррифы" type="grey" />
+                <SimpleBlockSection blockInfo={blocksInfo1} sectionHeader="" type="white"  showNumbers={false} showHeader={false}/> 
+                <AdvansedBlockSection blockInfo={directionsBlocksInfo} sectionHeader="Наши направления" type="grey" showImgSection={true}/>
+                <SimpleBlockSection blockInfo={blocksInfo2} sectionHeader="Как это работает" type="white" showNumbers={true}  showHeader={false}/>
+                <Tariffs blockInfo={tariffsBlocksInfo} sectionHeader="Плата за результат" type="grey" />
                 <ReserveRequest type="white"/>
                 <Footer type="grey"/>
             </div>

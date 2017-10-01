@@ -21,21 +21,21 @@ export class Tariffs extends React.Component {
 		let classes = [];
 		classes.push("tariffs");
 
-		if(this.props.type == "grey"){
+		if (this.props.type == "grey") {
 			classes.push("grey")
 		}
 
-		if(this.props.type == "white"){
+		if (this.props.type == "white") {
 			classes.push("white")
 		}
 
 		return (
 			<div className={classes.join(" ")}>
 				<p className="section-header">{this.props.sectionHeader}</p>
-				<div className="tariff-items">
-					{blocks}
-				</div>
-				
+				<p className="section-text">Мы не имеем тарифных планов и пакетных услуг.</p>
+				<p className="section-text">Вы нам платите за закрытую вакансию!</p>
+
+
 				<div className="discount">
 					<div className="discount-number">
 						<p className="small-number">500</p>

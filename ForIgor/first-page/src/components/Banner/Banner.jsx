@@ -83,7 +83,7 @@ export class Banner extends React.Component {
 
 						<div className="subscribe-content">
 							<div className="input-item">
-								<InputField onClick={this.onEmailChange.bind(this)} inputPlaceholder="Имя"></InputField>
+								<InputField onClick={this.onEmailChange.bind(this)} inputPlaceholder="Почта"></InputField>
 							</div>
 							<div className="button-item">
 								{item}
