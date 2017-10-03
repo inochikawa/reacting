@@ -124,7 +124,7 @@ class Index extends React.Component {
                 <Header />
                 <Banner />
                 <SimpleBlockSection blockInfo={blocksInfo1} sectionHeader="" type="white"  showNumbers={false} showHeader={false}/> 
-                <AdvansedBlockSection blockInfo={directionsBlocksInfo} sectionHeader="Наши направления" type="grey" showImgSection={true}/>
+                <AdvansedBlockSection blockInfo={directionsBlocksInfo} sectionHeader="Наши направления" type="grey" showImgSection={true} afterHeaderText="База наших кандидатов состоит только из студентов, специальности которых высоко востребованы на рынке услуг."/>
                 <SimpleBlockSection blockInfo={blocksInfo2} sectionHeader="Как это работает" type="white" showNumbers={true}  showHeader={false}/>
                 <Tariffs blockInfo={tariffsBlocksInfo} sectionHeader="Плата за результат" type="grey" />
                 <ReserveRequest type="white"/>

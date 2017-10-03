@@ -34,9 +34,16 @@ export class AdvansedBlockSection extends React.Component {
 			classes.push("white")
 		}
 
+		let afterHeaderText = null;
+
+		if(this.props.afterHeaderText){
+			afterHeaderText = <p className="after-headre-text">{this.props.afterHeaderText}</p>
+		}
+
 		return (
 			<div className={classes.join(" ")}>
 				<p className="section-header">{this.props.sectionHeader}</p>
+				{afterHeaderText}
 				<div className="block-items">
 					{blocks}
 				</div>

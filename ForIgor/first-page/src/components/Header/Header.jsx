@@ -4,6 +4,7 @@ import logoPic from "./images/logo.png";
 import logoPicMin from "./images/logo-min.png";
 import PhoneIcon from "react-icons/lib/md/phone";
 import { Button } from "./../Button/Button.jsx"
+import { animateScroll } from "./../../shareFunctions.jsx";
 
 export class Header extends React.Component {
 	constructor(props) {
@@ -49,30 +50,7 @@ export class Header extends React.Component {
 
 	scrollDown() {
 		let target = document.getElementById("request-section");
-		this.animate(document.scrollingElement || document.documentElement, "scrollTop", "", window.scrollY, target.offsetTop, 500, true)
-	}
-
-	animate(elem, style, unit, from, to, time, prop) {
-		if (!elem) {
-			return;
-		}
-		var start = new Date().getTime(),
-			timer = setInterval(function () {
-				var step = Math.min(1, (new Date().getTime() - start) / time);
-				if (prop) {
-					elem[style] = (from + step * (to - from)) + unit;
-				} else {
-					elem.style[style] = (from + step * (to - from)) + unit;
-				}
-				if (step === 1) {
-					clearInterval(timer);
-				}
-			}, 5);
-		if (prop) {
-			elem[style] = from + unit;
-		} else {
-			elem.style[style] = from + unit;
-		}
+		animateScroll(document.scrollingElement || document.documentElement, "scrollTop", "", window.scrollY, target.offsetTop, 500, true)
 	}
 
 	render() {
@@ -96,7 +74,7 @@ export class Header extends React.Component {
 						<PhoneIcon className="phone-icon" /> +380 97 461 58 57
 					</div>
 					<div className="order-request-section">
-						<Button onScrollDown={this.scrollDown.bind(this)} type={3} showAnimation={true} buttonNumber={1}>Забронировать размещение</Button>
+						<Button onScrollDown={this.scrollDown.bind(this)} type={3} showAnimation={true} buttonNumber={1}>Мне интересно</Button>
 					</div>
 				</div>
 			</div>

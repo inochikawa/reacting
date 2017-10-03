@@ -6,63 +6,18 @@ import { Header } from "./../Header/Header.jsx";
 import { Timer } from "./../Timer/Timer.jsx";
 import { Button } from "./../Button/Button.jsx"
 import { InputField } from "./../InputField/InputField.jsx"
+import { animateScroll } from "./../../shareFunctions.jsx";
 
 import axios from "axios";
 
 export class Banner extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isSubscribed: false,
-			showBtn: true,
-			email: ""
-		}
-	}
 
-
-	sendEmail() {
-		axios.post("studego.dev/subscribers/store", {
-			email: this.state.email,
-			type: 1
-		})
-			.then((response) => {
-				var res = response.data;
-
-				if (res) {
-					this.setState({
-						showBtn: false
-					})
-				} else {
-					this.setState({
-						isSubscribed: true,
-						showBtn: false
-					})
-				}
-			})
-	}
-
-	onEmailChange(e) {
-		this.setState({
-			email: e.target.value
-		})
+	scrollDown() {
+		let target = document.getElementById("request-section");
+		animateScroll(document.scrollingElement || document.documentElement, "scrollTop", "", window.scrollY, target.offsetTop, 500, true)
 	}
 
 	render() {
-		let item = null;
-
-		if (this.state.showBtn) {
-			item = <Button
-				onClick={this.sendEmail.bind(this)}
-				showAnimation={true}
-				className="subscribe-btn"
-				buttonNumber={2}
-				type={1}>Подписаться</Button>
-		} else if (this.state.isSubscribed) {
-			item = <span>Спасибо, Вы уже подписаны!</span>
-		} else {
-			item = <span>Спасибо!</span>
-		}
-
 		return (
 			<div className="banner">
 				<div className="shading">
@@ -82,11 +37,13 @@ export class Banner extends React.Component {
 						</div>
 
 						<div className="subscribe-content">
-							<div className="input-item">
-								<InputField onClick={this.onEmailChange.bind(this)} inputPlaceholder="Почта"></InputField>
-							</div>
 							<div className="button-item">
-								{item}
+								<Button
+									onClick={this.scrollDown.bind(this)}
+									showAnimation={true}
+									className="subscribe-btn"
+									buttonNumber={2}
+									type={1}>Да, сообщить</Button>
 							</div>
 						</div>
 

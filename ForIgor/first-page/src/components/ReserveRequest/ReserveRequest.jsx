@@ -8,9 +8,11 @@ export class ReserveRequest extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: "",
-			email: "",
+			name: "Maxim",
+			email: "mxm.stecenko@gmail.com",
+			phone: "0935436893",
 			isSubscribed: true,
+			inputDisabled: false,
 			showBtn: true,
 		}
 	}
@@ -29,26 +31,42 @@ export class ReserveRequest extends React.Component {
 		})
 	}
 
+	onPhoneInputChange(e) {
+		var phone = e.target.value;
+		this.setState({
+			phone: phone
+		})
+	}
+
 	sendRequest() {
-		axios.post("studego.dev/subscribers/store", {
+		axios.post("http://1125064.kirillb.web.hosting-test.net/subscribers/store", {
 			email: this.state.email,
 			name: this.state.name,
-			type: 2
+			phone: this.state.phone
 		})
 			.then((response) => {
 				var res = response.data;
 
 				if (res) {
 					this.setState({
-						showBtn: false
+						showBtn: false,
+						inputDisabled: true
 					})
 				} else {
 					this.setState({
 						isSubscribed: true,
-						showBtn: false
+						showBtn: false,
+						inputDisabled: true
 					})
 				}
 			})
+	}
+
+	handleKeyPress(e){
+		if (e.key === 'Enter') {
+			console.log("Enter pressed");
+			this.sendRequest();
+		  }
 	}
 
 	render() {
@@ -74,28 +92,40 @@ export class ReserveRequest extends React.Component {
 				type={2}>
 				Забронировать размещение
 					</Button>
-		} else if (this.state.isSubscribed) {
-			buttonItem = <span>Извините, Вы уже забронировали!</span>
 		} else {
-			buttonItem = <span>Спасибо! Вы забронировали размещение.</span>
+			buttonItem = <span>Спасибо!</span>
 		}
 
 		return (
-			<div className={classes.join(" ")} id="request-section">
+			<div
+				className={classes.join(" ")}
+				id="request-section"
+				onKeyPress={this.handleKeyPress.bind(this)}>
 				<div className="request-content">
 					<p className="request-header">Забронируй размещение на Studego и найди крутого кандидата сразу после открытия.</p>
 
-					<input className="flat-input"
-						onChange={this.onEmailInputChange.bind(this)}
-						type="text"
-						placeholder="Почта"
-						value={this.state.email} />
 
 					<input className="flat-input"
 						onChange={this.onNameInputChange.bind(this)}
 						type="text"
 						placeholder="Имя"
-						value={this.state.name} />
+						value={this.state.name} 
+						disabled={this.state.inputDisabled}/>
+
+					<input className="flat-input"
+						onChange={this.onPhoneInputChange.bind(this)}
+						type="email"
+						placeholder="Телефон"
+						value={this.state.phone} 
+						disabled={this.state.inputDisabled}/>
+
+
+					<input className="flat-input"
+						onChange={this.onEmailInputChange.bind(this)}
+						type="text"
+						placeholder="Почта"
+						value={this.state.email} 
+						disabled={this.state.inputDisabled}/>
 
 					{/* <button className="send-btn">Забронировать размещение</button> */}
 
