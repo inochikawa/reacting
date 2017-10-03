@@ -8,9 +8,9 @@ export class ReserveRequest extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: "Maxim",
-			email: "mxm.stecenko@gmail.com",
-			phone: "0935436893",
+			name: "",
+			email: "",
+			phone: "",
 			isSubscribed: true,
 			inputDisabled: false,
 			showBtn: true,
