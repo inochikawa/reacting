@@ -80,7 +80,7 @@ export class ReserveRequest extends React.Component {
 
 	sendRequest() {
 		if (this.validateFields()) {
-			axios.post("http://1125064.kirillb.web.hosting-test.net/subscribers/store", {
+			axios.post("http://partners.studego.com/subscibers/store", {
 				email: this.state.email,
 				name: this.state.name,
 				phone: this.state.phone

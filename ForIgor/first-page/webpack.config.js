@@ -71,8 +71,14 @@ module.exports = {
     ],
 
     devServer: {
-        proxy: {
-            "/subscribers": "http://1125064.kirillb.web.hosting-test.net"
+        overlay: {
+            warnings: true,
+            errors: true
+        },
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
         }
     }
 }
